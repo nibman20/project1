@@ -1,0 +1,107 @@
+<!--
+-­‐-­‐
+* 
+  Author:Nibman Tiyabe Laboe
+* 
+  Assignment: WE3.0 PHP Web App Assignment, Digital Skills  Academy
+* 
+  Student ID: D14128767
+* 
+  Date : 1977/09
+
+* Ref: http://codepen.io/chriscoyier/pen/DmnlJ 
+* Ref: http://www.hongkiat.com/blog/responsive-web-nav/
+  
+-->
+<!Doctype html>
+<html>
+
+      <head>
+
+      <title>Home</title>
+
+      <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 
+  <link rel="stylesheet" href="flexstyle1.css">
+ 
+
+  <!---Javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>
+    $(function() {
+      var pull    = $('#pull');
+        menu    = $('nav ul');
+        menuHeight  = menu.height();
+
+      $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+      });
+
+      $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+              menu.removeAttr('style');
+            }
+        });
+    });
+  </script>
+  
+</head>
+      
+<body>
+ <div class="container">
+  
+  <nav class="clearfix">
+    <ul class="clearfix">
+      <li><a href="index1.html">Home</a></li>
+     <li><a href="profile1.html">About</a></li> 
+      <li><a href="about.html">Content</a></li>  
+    </ul>
+    <a href="#" id="pull">Menu</a>
+  </nav>
+  
+<form class="rwdform" action="?Page=form.php" method="post">
+  
+  <fieldset>
+
+   <legend>Personnal Information</legend><br><br>
+
+<div>
+    <label class="desc" id="title1" for="full_name">Full Name</label>
+    <div>
+      <input id="full_name" name="full_name" type="text" class="field text fn" value="" size="8" tabindex="1">
+    </div>
+</div>
+<div>
+    <label class="desc" id="title2" for="phone">Password</label>
+    <div>
+      <input id="phone" name="phone" type="tel" class="field text fn" value="" size="8" tabindex="2">
+    </div>
+</div>
+  
+
+<div>
+  <div>
+  <input id="saveForm" name="saveForm" type="submit" value="Submit" />
+ </div>
+</div>  
+ </fieldset> 
+
+ </form>
+</div>
+
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage('resize', "*");
+  }
+</script>        
+  
+         
+</body>
+</html>
